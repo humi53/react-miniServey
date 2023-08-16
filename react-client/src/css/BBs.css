@@ -4,10 +4,6 @@ div.image {
   width: 80%;
   margin: 10px auto;
 }
-
-input {
-  display: none;
-}
 label {
   display: block;
   width: 100%;

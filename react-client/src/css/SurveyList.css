@@ -1,0 +1,49 @@
+/* SurveyList.css */
+.content-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.survey-table {
+  border-collapse: collapse;
+  width: 80%;
+  align-content: center;
+}
+
+.survey-table th,
+.survey-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.survey-table th:first-child,
+.survey-table td:first-child {
+  border-left: 1px solid #ccc;
+}
+
+.survey-table th:last-child,
+.survey-table td:last-child {
+  border-right: 1px solid #ccc;
+}
+
+.survey-table th {
+  background-color: #f7dfaf; /* 연필 색상 */
+  font-weight: bold;
+  padding: 15px 10px;
+}
+
+.survey-table td {
+  background-color: #fef2e0; /* 크래파스 색상 */
+}
+
+.survey-table tr {
+  transition: background-color 0.3s, box-shadow 0.3s; /* 음영 변화 설정 */
+}
+
+.survey-table tr:hover {
+  background-color: #616161 !important;
+  cursor: pointer;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* 음영 추가 */
+}

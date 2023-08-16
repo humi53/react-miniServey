@@ -15,3 +15,63 @@ export const bbsInsert = async (formData) => {
   };
   const response = await fetch(URL, fetchData);
 };
+
+export const surveyTitleInsrt = async (jsonData) => {
+  const URL = "/survey/title/insert";
+  const fetchData = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: jsonData,
+  };
+  const response = await fetch(URL, fetchData);
+};
+
+export const surveyTitleList = async () => {
+  try {
+    const response = await fetch("/survey/title/list");
+    const subveyList = await response.json();
+    return subveyList;
+  } catch (error) {
+    return [];
+  }
+};
+
+export const surveyTitleDelete = async (jsonData) => {
+  const URL = "/survey/title/delete";
+  const fetchData = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: jsonData,
+  };
+  const response = await fetch(URL, fetchData);
+  return response.ok;
+};
+
+export const questionList = async (id) => {
+  try {
+    console.log(id);
+    const response = await fetch(`/question/list/${id}`);
+    const questList = await response.json();
+    console.log(questList);
+    return questList;
+  } catch (error) {
+    return {};
+  }
+};
+
+export const questionInsert = async (jsonData) => {
+  const URL = "/question/insert";
+  const fetchData = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: jsonData,
+  };
+  console.log(fetchData);
+  const response = await fetch(URL, fetchData);
+};

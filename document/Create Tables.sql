@@ -56,3 +56,13 @@ ALTER TABLE tbl_reply
 ADD FOREIGN KEY (rep_memseq) REFERENCES tbl_member(mem_seq);
 ALTER TABLE tbl_reply
 ADD FOREIGN KEY (rep_quseq) REFERENCES tbl_question(qu_seq);
+
+
+-----------------------------------------------
+SELECT * FROM tbl_sub;
+SELECT * FROM tbl_question;
+
+INSERT INTO tbl_question(qu_innerNum, qu_subseq, qu_question)
+VALUES (1, 5, "우리의 질문은 없고 능력이 증가하고 취직을 잘해서 행복하고 싶어요");
+
+

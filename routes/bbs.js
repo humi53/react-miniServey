@@ -29,9 +29,7 @@ const uploadPath = path.join("public/uploads");
 const storageOption = {
   filename: (req, file, cb) => {
     const originName = file.originName;
-    const filePrix = `${Date.now()}-${Math.round(
-      Math.random() * 100000
-    )}`;
+    const filePrix = `${Date.now()}-${Math.round(Math.random() * 100000)}`;
     const fileName = `${filePrix}-${originName}`;
     console.log(fileName);
     cb(null, fileName);
@@ -48,20 +46,23 @@ const storage = multer.diskStorage(storageOption);
 const uploadMiddleWare = multer({ storage: storage });
 
 router.get("/", async (req, res) => {
+  console.log("root get");
   res.json(Hello);
 });
 
-router.post(
-  "/insert",
-  uploadMiddleWare.single("b_image"),
-  async (req, res) => {
-    const body = req.body;
-    // multer MiddleWare 가 파일 관련 데이터를 필터링하고, 처리한 후
-    // 관련정보를 req.file 객체에 담아준다
-    const file = req.files;
-    console.log("body ", body, file);
-    res.send("OK");
-  }
-);
+router.post("/insert", uploadMiddleWare.single("b_image"), async (req, res) => {
+  const body = req.body;
+  // multer MiddleWare 가 파일 관련 데이터를 필터링하고, 처리한 후
+  // 관련정보를 req.file 객체에 담아준다
+  const file = req.files;
+  console.log("body ", body, file);
+  res.send("OK");
+});
+
+router.get("/survey/title/insert", async (req, res) => {
+  const body = req.body;
+  console.log("body : ", body);
+  res.send("OK");
+});
 
 export default router;

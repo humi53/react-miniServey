@@ -13,10 +13,10 @@ const NavList = () => {
           <NavLink to="/notice">공지사항</NavLink>
         </li>
         <li>
-          <NavLink to="/manage">관리페이지</NavLink>
+          <NavLink to="/manage">설문주제목록</NavLink>
         </li>
         <li>
-          <NavLink to="/servey">설문페이지</NavLink>
+          <NavLink to="/survey">설문페이지</NavLink>
         </li>
       </ul>
     </nav>
